@@ -28,13 +28,13 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: NETFLEX DEBIAN NOVNC
         run: |
-          apt -y install novnc websockify python-numpy
-          websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901
-          apt install qemu-system-x86_64
-          apt install qemu-img
+          sudo apt -y install novnc websockify python-numpy
+          sudo websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901
+          sudo apt install qemu-system-x86_64
+          sudo apt install qemu-img
           wget https://saimei.ftp.acc.umu.se/debian-cd/current/amd64/iso-cd/debian-11.0.0-amd64-netinst.iso
-          qemu-img create -f qcow2 deb.img 20G
-          qemu-system-x86_64 -hda deb.img -cdrom debian-11.0.0-amd64-netinst.iso -m 4068 -vnc 127.0.0.0:5901 > /dev/null 2>&1
+          sudo qemu-img create -f qcow2 deb.img 20G
+          sudo qemu-system-x86_64 -hda deb.img -cdrom debian-11.0.0-amd64-netinst.iso -m 4068 -vnc 127.0.0.0:5901 > /dev/null 2>&1
           npm install ngrok -g
           ngrok authtoken 1oomRxudQIaBrkFui5ofwWfETvB_2nirjctS3mEDJ9ZLg9LS6
           ngrok http 6080 -region ap
