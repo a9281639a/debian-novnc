@@ -30,7 +30,7 @@ jobs:
         run: |
           sudo apt -y install novnc websockify python-numpy
           sudo websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901
-          sudo apt install qemu-system-x86_64
+          sudo apt install qemu
           sudo apt install qemu-img
           wget https://saimei.ftp.acc.umu.se/debian-cd/current/amd64/iso-cd/debian-11.0.0-amd64-netinst.iso
           sudo qemu-img create -f qcow2 deb.img 20G
