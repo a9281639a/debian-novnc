@@ -29,7 +29,7 @@ jobs:
       - name: NETFLEX DEBIAN NOVNC
         run: |
          sudo apt update
-          sudo apt -y install novnc websockify python pip
+          sudo apt -y install novnc websockify python2 pip
           pip install numpy
 
           sudo websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901
