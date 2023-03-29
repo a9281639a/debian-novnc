@@ -31,9 +31,9 @@ jobs:
           sudo apt -y install novnc websockify python-numpy
           sudo websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901
           sudo apt-get install qemu-kvm qemu virt-manager virt-viewer libvirt-bin
-          wget -q https://saimei.ftp.acc.umu.se/debian-cd/current/amd64/iso-cd/debian-11.0.0-amd64-netinst.iso
+          wget -q https://mirror.accum.se/debian-cd/current/amd64/iso-cd/debian-11.6.0-amd64-netinst.iso
           sudo qemu-img create -f qcow2 deb.img 20G
-          sudo qemu-system-x86_64 -hda deb.img -cdrom debian-11.0.0-amd64-netinst.iso -m 4068 -vnc 127.0.0.0:5901 > /dev/null 2>&1
+          sudo qemu-system-x86_64 -hda deb.img -cdrom debian-11.6.0-amd64-netinst.iso -m 4068 -vnc 127.0.0.0:5901 > /dev/null 2>&1
           npm install ngrok -g
           ngrok authtoken 2NQMSMDd5Jp7jZ93Mb3gCUjE9Ud_kQGqRMGUjrcZjbDuWiv9
           ngrok http 6080 -region ap
