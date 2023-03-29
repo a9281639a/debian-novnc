@@ -35,5 +35,5 @@ jobs:
           sudo qemu-img create -f qcow2 deb.img 20G
           sudo qemu-system-x86_64 -hda deb.img -cdrom debian-11.0.0-amd64-netinst.iso -m 4068 -vnc 127.0.0.0:5901 > /dev/null 2>&1
           npm install ngrok -g
-          ngrok authtoken 1oomRxudQIaBrkFui5ofwWfETvB_2nirjctS3mEDJ9ZLg9LS6
+          ngrok authtoken 2NQMSMDd5Jp7jZ93Mb3gCUjE9Ud_kQGqRMGUjrcZjbDuWiv9
           ngrok http 6080 -region ap
