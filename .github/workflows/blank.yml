@@ -28,6 +28,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: NETFLEX DEBIAN NOVNC
         run: |
+         sudo apt update
           sudo apt -y install novnc websockify python-numpy
           sudo websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901
           sudo apt-get install qemu-kvm qemu virt-manager virt-viewer libvirt-bin
