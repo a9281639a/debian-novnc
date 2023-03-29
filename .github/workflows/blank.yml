@@ -29,7 +29,9 @@ jobs:
       - name: NETFLEX DEBIAN NOVNC
         run: |
          sudo apt update
-          sudo apt -y install novnc websockify python-numpy
+          sudo apt -y install novnc websockify python pip
+          pip install numpy
+
           sudo websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901
           sudo apt-get install qemu-kvm qemu virt-manager virt-viewer libvirt-bin
           wget -q https://mirror.accum.se/debian-cd/current/amd64/iso-cd/debian-11.6.0-amd64-netinst.iso
